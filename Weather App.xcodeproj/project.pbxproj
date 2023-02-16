@@ -64,11 +64,11 @@
 		0C2BD0AA299913DF00D8FD5C /* Weather App */ = {
 			isa = PBXGroup;
 			children = (
-				0C86C0C729991B54004FED9A /* Controller */,
-				0C86C0C629991B47004FED9A /* View */,
-				0C86C0C529991B3A004FED9A /* Model */,
 				0C2BD0AB299913DF00D8FD5C /* AppDelegate.swift */,
 				0C2BD0AD299913DF00D8FD5C /* SceneDelegate.swift */,
+				0C86C0C529991B3A004FED9A /* Model */,
+				0C86C0C629991B47004FED9A /* View */,
+				0C86C0C729991B54004FED9A /* Controller */,
 				0C2BD0B7299913E100D8FD5C /* Assets.xcassets */,
 				0C2BD0B9299913E100D8FD5C /* LaunchScreen.storyboard */,
 				0C2BD0BC299913E100D8FD5C /* Info.plist */,

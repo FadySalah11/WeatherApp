@@ -2,15 +2,20 @@
 //  WeatherManager.swift
 //  Weather App
 //
-//  Created by Folio on 14/02/2023.
+//  Created by Folio on 13/02/2023.
 //
 
 import Foundation
 
+protocol WeatherManagerDelegate {
+    func didUpdateWeather(weather: WeatherModel)
+}
+
 struct WeatherManager{
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=db1401fa1ad24a2b9f7d176f17b13275&units=metric"
     
-    
+    var delegate : WeatherManagerDelegate?
+
     func fetchWeather(cityName:String){
         let urlString = "\(weatherURL)&q=\(cityName)"
         performRequest(urlString : urlString)
@@ -29,14 +34,16 @@ struct WeatherManager{
                     return
                 }
                 if let safeData = data{
-                    self.parseJSON(weatherData: safeData)
+                    if let weather = self.parseJSON(weatherData: safeData){
+                        self.delegate?.didUpdateWeather(weather: weather)
+                    }
                 }
             }
             
             task.resume()
         }
     }
-    func parseJSON(weatherData :Data){
+    func parseJSON(weatherData :Data)-> WeatherModel?{
         let decoder = JSONDecoder()
         do{
          let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
@@ -45,14 +52,17 @@ struct WeatherManager{
             let name = decodedData.name
             
             let weather = WeatherModel(conditionId: id, cityName: name, tempreature: temp)
-            
-            print(weather.tempreatureString)
+            return weather
             
         }
         catch{
             print(error)
+            return nil
+            
         }
+        
     }
     
    
 }
+
