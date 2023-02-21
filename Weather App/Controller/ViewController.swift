@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Weather App
 //
-//  Created by Folio on 12/02/2023.
+//  Created by Fady Salah on 12/02/2023.
 //
 
 import UIKit
