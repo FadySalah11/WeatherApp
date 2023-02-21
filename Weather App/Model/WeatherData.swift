@@ -2,7 +2,7 @@
 //  WeatherData.swift
 //  Weather App
 //
-//  Created by Folio on 16/02/2023.
+//  Created by Fady Salah on 16/02/2023.
 //
 
 import Foundation
