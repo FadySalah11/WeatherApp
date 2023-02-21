@@ -2,7 +2,7 @@
 //  WeatherManager.swift
 //  Weather App
 //
-//  Created by Folio on 13/02/2023.
+//  Created by Fady Salah on 13/02/2023.
 //
 
 import Foundation
